@@ -3,13 +3,21 @@
 //Typing Speed Test
 const testWrapper = document.querySelector(".test-wrapper");
 const testArea = document.querySelector("#test-area");
-const originText = document.querySelector("#origin-text p").innerHTML;
+let oriText = document.querySelector("#origin-text p");
 const resetButton = document.querySelector("#reset");
 const theTimer = document.querySelector(".timer");
 const errorDisplay = document.querySelector(".errors span");
 const accDisplay = document.querySelector(".accuracy span");
 const wpmDisplay = document.querySelector(".wpm span");
+const leftArrow = document.querySelector(".text-selector .left");
+const rightArrow = document.querySelector(".text-selector .right");
 
+const texts = ["Following with his keen eyes the trail to the river, and then the river back towards the forest, Aragorn saw a shadow on the distant green, a dark swift-moving blur. He cast himself upon the ground and listened again intently. But Legolas stood beside him, shading his bright elven-eyes with his long slender hand, and he saw not a shadow, nor a blur, but the small figures of horsemen, many horsemen, and the glint of morning on the tips of their spears was like the twinkle of minute stars beyond the edge of mortal sight. Far behind them a dark smoke rose in thin curling threads.",
+                "This is only a small selection of the assembled presents. Bilbo's residence had got rather cluttered up with things in the course of his long life. It was a tendency of hobbit-holes to get cluttered up: for which the custom of giving so many birthday- presents was largely responsible. Not, of course, that the birthday- presents were always new; there were one or two old mathoms of forgotten uses that had circulated all around the district; but Bilbo had usually given new presents, and kept those that he received. The old hole was now being cleared a little.",
+                "And all the host laughed and wept, and in the midst of their merriment and tears the clear voice of the minstrel rose like silver and gold, and all men were hushed. And he sang to them, now in the Elven-tongue, now in the speech of the West, until their hearts, wounded with sweet words, overflowed, and their joy was like swords, and they passed in thought out to regions where pain and delight flow together and tears are the very wine of blessedness.",
+                "Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at.",
+                "When every guest had been welcomed and was finally inside the gate, there were songs, dances, music, games, and, of course, food and drink. There were three official meals: lunch, tea, and dinner (or supper). But lunch and tea were marked chiefly by the fact that at those times all the guests were sitting down and eating together. At other times there were merely lots of people eating and drinking — continuously from elevenses until six-thirty, when the fireworks started.",
+                "Out of the wreck rose the Black Rider, tall and threatening, towering above her. With a cry of hatred that stung the very ears like venom he let fall his mace. Her shield was shivered in many pieces, and her arm was broken; she stumbled to her knees. He bent over her like a cloud, and his eyes glittered; he raised his mace to kill. But suddenly he too stumbled forward with a cry of bitter pain, and his stroke went wide, driving into the ground. "]
 var timer = [0, 0, 0, 0];
 var interval;
 var timerRunning = false;
@@ -18,6 +26,27 @@ var correctChar = 0;
 var typedEntry = 0;
 var wpm = 0;
 var pause = false;
+var rand = Math.floor(Math.random()*texts.length);
+
+function selectLeft() {
+    if (rand == 0) {
+        rand = texts.length-1;
+    } else {
+    rand--;
+    }
+    oriText.innerHTML = texts[rand];
+}
+
+function selectRight() {
+    if (rand == texts.length-1) {
+        rand = 0;
+    } else {
+    rand++;
+    }
+    oriText.innerHTML = texts[rand];
+}
+
+
 
 // Add leading zero to numbers 9 or below (purely for aesthetics):
 function leadingZero(time) {
@@ -48,13 +77,13 @@ function checkSpelling(e) {
     }
 
     let textEntered = testArea.value;
-    let originTextMatch = originText.substring(0, textEntered.length);
+    let oriTextMatch = oriText.innerHTML.substring(0, textEntered.length);
 
-    if (textEntered == originText) {
+    if (textEntered == oriText.innerHTML) {
         clearInterval(interval);
         testWrapper.style.borderColor = "#2fe73f";
     } else {
-        if (textEntered == originTextMatch) {
+        if (textEntered == oriTextMatch) {
             pause = false;       //Unpause spell checking when error is errased and text matches again
             testWrapper.style.borderColor = "#7EB2E6";
            performanceChecks(textEntered);
@@ -153,4 +182,9 @@ function reset() {
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", checkSpelling, false);
 resetButton.addEventListener("click", reset, false);
+leftArrow.addEventListener("click", selectLeft, false);
+rightArrow.addEventListener("click", selectRight, false);
+window.addEventListener('load', function (e) {
+    oriText.innerHTML = texts[rand];
+  })
 

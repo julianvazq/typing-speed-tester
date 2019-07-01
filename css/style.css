@@ -62,7 +62,7 @@ body {
 
 .test-area {
     margin: 0 auto;
-    max-width: 650px;
+    max-width: 750px;
 }
 
 .test-area {
@@ -79,11 +79,42 @@ body {
     margin-bottom: 1em;
     padding: 1em 1em 0;
     background-color: #ededede3;
+    max-width: 650px;
 }
+
+.text-selector {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+i {
+    border: solid #ededede3;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    font-size: 3em;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+  }
+
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
 
 #origin-text p {
     margin: 0;
     padding-bottom: 1em;
+    min-height: 235px;
 }
 
 .test-wrapper {
