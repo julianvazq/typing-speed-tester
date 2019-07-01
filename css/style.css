@@ -39,13 +39,25 @@ body {
 .intro {
     padding: 2em 2em;
     color: #ffffff;
-    background: #429890;
+    background: #644726;
 }
 
 
 .intro p {
     margin: 0 auto;
     max-width: 550px;
+}
+
+.background-wrapper {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5), 
+        rgba(0, 0, 0, 0.5)
+        ), 
+        url(../lord-of-the-rings.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3em 0;
 }
 
 .test-area {
@@ -64,9 +76,9 @@ body {
 }
 
 #origin-text {
-    margin: 1em 0;
+    margin-bottom: 1em;
     padding: 1em 1em 0;
-    background-color: #ededed;
+    background-color: #ededede3;
 }
 
 #origin-text p {
@@ -88,6 +100,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    color: rgb(255, 255, 255);
 }
 
 .timer {
@@ -101,7 +114,6 @@ body {
     font-weight: bold;
     color: white;
     background: rgb(212, 18, 12) ;
-    /* border: 10px solid #E95D0F; */
 }
 
 #reset:hover {
@@ -112,6 +124,7 @@ body {
 .results {
     font-size: 1.2em;
     font-weight: bold;
+    color: white;
 }
 
 .results span {

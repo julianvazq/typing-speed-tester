@@ -43,10 +43,6 @@ function checkSpelling(e) {
 
     var key = e.keyCode; 
 
-    // if (!(key >= 48 && key <= 90) && key != 32 && key != 173 && key != 188 && key != 190) {
-    //     return;
-    // }
-
     if (!(key >= 48 && key <= 90) && !(key >= 96 && key <= 111) && !(key >= 186 && key <= 222) && key != 32 && key!= 8) {
         return;
     }
@@ -77,20 +73,14 @@ function checkSpelling(e) {
 
     function performanceChecks(textEntered) {
 
-    //Word accuracy calculation
-    // correctChar = textEntered.length - errors;
-    // acc = (correctChar / textEntered.length) * 100;
-    // accDisplay.innerHTML = acc.toFixed(2) + "%";
-
-
-    //Gross WPM calculation
+    // Gross WPM 
     if (timer[0] < 1) {
         grossWmp = ((typedEntry/5) / (timer[1] / 60));
     } else {
         grossWmp = (typedEntry/5) / timer[0];
     }
 
-    //Net WMP
+    // Net WMP
     netWmp = grossWmp - errors;
     wpmDisplay.innerHTML = Math.floor(netWmp);
     if (netWmp > 60) {
@@ -101,7 +91,7 @@ function checkSpelling(e) {
         wpmDisplay.style.color = "red";
     }
 
-    //Accuracy 
+    // Accuracy 
     acc = (netWmp / grossWmp) * 100;
     accDisplay.innerHTML = acc.toFixed(2) + "%";
     if (acc > 90) {
@@ -114,7 +104,7 @@ function checkSpelling(e) {
 
 }
 
-//Count errors and change color accordingly
+// Count errors and change color accordingly
 function checkError() {
     pause = true;
     errors++;
@@ -147,16 +137,16 @@ function reset() {
     errors = 0;
     correctChar = 0;
 
-    //Graphic reset
+    // Graphic reset
     testArea.value = "";
     theTimer.innerHTML = "00:00:00";
     testWrapper.style.borderColor = "grey";
     errorDisplay.innerHTML = "0";
-    errorDisplay.style.color = "black";
+    errorDisplay.style.color = "white";
     accDisplay.innerHTML = "X%";
-    accDisplay.style.color = "black";
+    accDisplay.style.color = "white";
     wpmDisplay.innerHTML = "0";
-    wpmDisplay.style.color = "black";
+    wpmDisplay.style.color = "white";
 }
 
 // Event listeners for keyboard input and the reset button:
