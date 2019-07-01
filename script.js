@@ -11,6 +11,10 @@ const accDisplay = document.querySelector(".accuracy span");
 const wpmDisplay = document.querySelector(".wpm span");
 const leftArrow = document.querySelector(".text-selector .left");
 const rightArrow = document.querySelector(".text-selector .right");
+const hp = document.querySelector(".masthead .hp");
+const lotr = document.querySelector(".masthead .lotr");
+const backgroundWrapper = document.querySelector(".background-wrapper");
+const intro = document.querySelector(".intro");
 
 const texts = ["Following with his keen eyes the trail to the river, and then the river back towards the forest, Aragorn saw a shadow on the distant green, a dark swift-moving blur. He cast himself upon the ground and listened again intently. But Legolas stood beside him, shading his bright elven-eyes with his long slender hand, and he saw not a shadow, nor a blur, but the small figures of horsemen, many horsemen, and the glint of morning on the tips of their spears was like the twinkle of minute stars beyond the edge of mortal sight. Far behind them a dark smoke rose in thin curling threads.",
                 "This is only a small selection of the assembled presents. Bilbo's residence had got rather cluttered up with things in the course of his long life. It was a tendency of hobbit-holes to get cluttered up: for which the custom of giving so many birthday- presents was largely responsible. Not, of course, that the birthday- presents were always new; there were one or two old mathoms of forgotten uses that had circulated all around the district; but Bilbo had usually given new presents, and kept those that he received. The old hole was now being cleared a little.",
@@ -178,6 +182,23 @@ function reset() {
     wpmDisplay.style.color = "white";
 }
 
+function changeTheme() {
+    if (this == hp) {
+        backgroundWrapper.style.background = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../harry-potter.jpg)";
+        backgroundWrapper.style.backgroundSize = "cover";
+        backgroundWrapper.style.backgroundPosition = "center";
+        backgroundWrapper.style.backgroundRepeat = "no-repeat";
+        intro.style.background = "#266464";
+
+    } else {
+        backgroundWrapper.style.background = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../lord-of-the-rings.jpg)";
+        backgroundWrapper.style.backgroundSize = "cover";
+        backgroundWrapper.style.backgroundPosition = "center";
+        backgroundWrapper.style.backgroundRepeat = "no-repeat";
+        intro.style.background = "#644726";
+    }
+}
+
 // Event listeners for keyboard input and the reset button:
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", checkSpelling, false);
@@ -187,4 +208,5 @@ rightArrow.addEventListener("click", selectRight, false);
 window.addEventListener('load', function (e) {
     oriText.innerHTML = texts[rand];
   })
-
+hp.addEventListener("click", changeTheme, false);
+lotr.addEventListener("click", changeTheme, false);

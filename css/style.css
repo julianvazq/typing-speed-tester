@@ -26,14 +26,40 @@ body {
 }
 
 .masthead {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
     padding: 1em 2em;
     background-color: #0D1B2E;
     color: rgb(255, 255, 255);
 }
 
 .masthead h1 {
+    grid-row: 1/3;
+    grid-column: 1;
     text-align: center;
+    align-self: center;
     font-family: 'Ubuntu', sans-serif;
+    justify-self: center;
+}
+
+.masthead .links {
+    grid-row: 1/3;
+    grid-column: 1;
+    justify-self: end;
+}
+
+.masthead img {
+    border: 5px solid black;
+    padding: 0 0.5em;
+}
+
+.masthead .hp {
+    width: 110px;
+}
+
+.masthead .lotr {
+    width: 118px;
 }
 
 .intro {
