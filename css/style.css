@@ -51,7 +51,7 @@ body {
 
 .masthead img {
     border: 5px solid black;
-    padding: 0 0.5em;
+    margin: 0 0.5em;
 }
 
 .masthead .hp {
@@ -75,7 +75,7 @@ body {
 }
 
 .background-wrapper {
-    background: linear-gradient(
+    background-image: linear-gradient(
         rgba(0, 0, 0, 0.5), 
         rgba(0, 0, 0, 0.5)
         ), 

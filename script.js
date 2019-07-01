@@ -184,14 +184,14 @@ function reset() {
 
 function changeTheme() {
     if (this == hp) {
-        backgroundWrapper.style.background = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../harry-potter.jpg)";
+        backgroundWrapper.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../harry-potter.jpg)";
         backgroundWrapper.style.backgroundSize = "cover";
         backgroundWrapper.style.backgroundPosition = "center";
         backgroundWrapper.style.backgroundRepeat = "no-repeat";
         intro.style.background = "#266464";
 
     } else {
-        backgroundWrapper.style.background = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../lord-of-the-rings.jpg)";
+        backgroundWrapper.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../lord-of-the-rings.jpg)";
         backgroundWrapper.style.backgroundSize = "cover";
         backgroundWrapper.style.backgroundPosition = "center";
         backgroundWrapper.style.backgroundRepeat = "no-repeat";
