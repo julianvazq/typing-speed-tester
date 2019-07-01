@@ -52,6 +52,7 @@ body {
 .masthead img {
     border: 5px solid black;
     margin: 0 0.5em;
+    cursor: pointer;
 }
 
 .masthead .hp {
@@ -129,12 +130,10 @@ i {
 
   .left {
     transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
   }
 
   .right {
     transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
   }
 
 #origin-text p {
@@ -171,6 +170,7 @@ i {
     font-weight: bold;
     color: white;
     background: rgb(212, 18, 12) ;
+    cursor: pointer;
 }
 
 #reset:hover {
