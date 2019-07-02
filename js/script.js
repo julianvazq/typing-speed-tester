@@ -199,7 +199,7 @@ function reset() {
 
 function changeTheme() {
     if (this == hp) {
-        backgroundWrapper.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../images/harry-potter.jpg)";
+        backgroundWrapper.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/harry-potter.jpg)";
         backgroundWrapper.style.backgroundSize = "cover";
         backgroundWrapper.style.backgroundPosition = "center";
         backgroundWrapper.style.backgroundRepeat = "no-repeat";
@@ -210,7 +210,7 @@ function changeTheme() {
         rand = Math.floor(Math.random()*hpTexts.length);
         oriText.innerHTML = hpTexts[rand];
     } else {
-        backgroundWrapper.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../images/lord-of-the-rings.jpg)";
+        backgroundWrapper.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/lord-of-the-rings.jpg)";
         backgroundWrapper.style.backgroundSize = "cover";
         backgroundWrapper.style.backgroundPosition = "center";
         backgroundWrapper.style.backgroundRepeat = "no-repeat";
