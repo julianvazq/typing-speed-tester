@@ -5,7 +5,6 @@
 }
 
 body,
-button,
 input,
 select,
 textarea {
@@ -165,11 +164,13 @@ i {
     align-items: center;
     flex-wrap: wrap;
     color: rgb(255, 255, 255);
+    font-family: 'Old Standard TT', serif;
 }
 
 .timer {
     font-size: 3em;
     font-weight: bold;
+    width: 250px;
 }
 
 #reset {
