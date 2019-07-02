@@ -20,10 +20,10 @@ const textTitle = document.querySelector("h2");
 const meta = document.querySelector(".meta");
 
 const lotrTexts = ["Following with his keen eyes the trail to the river, and then the river back towards the forest, Aragorn saw a shadow on the distant green, a dark swift-moving blur. He cast himself upon the ground and listened again intently. But Legolas stood beside him, shading his bright elven-eyes with his long slender hand, and he saw not a shadow, nor a blur, but the small figures of horsemen, many horsemen, and the glint of morning on the tips of their spears was like the twinkle of minute stars beyond the edge of mortal sight. Far behind them a dark smoke rose in thin curling threads.",
-                "This is only a small selection of the assembled presents. Bilbo's residence had got rather cluttered up with things in the course of his long life. It was a tendency of hobbit-holes to get cluttered up: for which the custom of giving so many birthday- presents was largely responsible. Not, of course, that the birthday- presents were always new; there were one or two old mathoms of forgotten uses that had circulated all around the district; but Bilbo had usually given new presents, and kept those that he received. The old hole was now being cleared a little.",
+                "This is only a small selection of the assembled presents. Bilbo's residence had got rather cluttered up with things in the course of his long life. It was a tendency of hobbit-holes to get cluttered up: for which the custom of giving so many birthday presents was largely responsible. Not, of course, that the birthday- presents were always new; there were one or two old mathoms of forgotten uses that had circulated all around the district; but Bilbo had usually given new presents, and kept those that he received. The old hole was now being cleared a little.",
                 "And all the host laughed and wept, and in the midst of their merriment and tears the clear voice of the minstrel rose like silver and gold, and all men were hushed. And he sang to them, now in the Elven-tongue, now in the speech of the West, until their hearts, wounded with sweet words, overflowed, and their joy was like swords, and they passed in thought out to regions where pain and delight flow together and tears are the very wine of blessedness.",
                 "Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at.",
-                "When every guest had been welcomed and was finally inside the gate, there were songs, dances, music, games, and, of course, food and drink. There were three official meals: lunch, tea, and dinner (or supper). But lunch and tea were marked chiefly by the fact that at those times all the guests were sitting down and eating together. At other times there were merely lots of people eating and drinking — continuously from elevenses until six-thirty, when the fireworks started.",
+                "When every guest had been welcomed and was finally inside the gate, there were songs, dances, music, games, and, of course, food and drink. There were three official meals: lunch, tea, and dinner (or supper). But lunch and tea were marked chiefly by the fact that at those times all the guests were sitting down and eating together. At other times there were merely lots of people eating and drinking - continuously from elevenses until six-thirty, when the fireworks started.",
                 "Out of the wreck rose the Black Rider, tall and threatening, towering above her. With a cry of hatred that stung the very ears like venom he let fall his mace. Her shield was shivered in many pieces, and her arm was broken; she stumbled to her knees. He bent over her like a cloud, and his eyes glittered; he raised his mace to kill. But suddenly he too stumbled forward with a cry of bitter pain, and his stroke went wide, driving into the ground."]
 const hpTexts = ["But he understood at last what Dumbledore had been trying to tell him. It was, he thought, the difference between being dragged into the arena to face a battle to the death and walking into the arena with your head held high. Some people, perhaps, would say that there was little to choose between the two ways, but Dumbledore knew - and so do I, thought Harry, with a rush of fierce pride, and so did my parents - that there was all the difference in the world.",
                 "The bang was like a cannon blast, and the golden flames that erupted between them, at the dead center of the circle they had been treading, marked the point where the spells collided. Harry saw Voldemort’s green jet meet his own spell, saw the Elder Wand fly high, dark against the sunrise, spinning across the enchanted ceiling like the head of Nagini, spinning through the air toward the master it would not kill, who had come to take full possession of it at last.",
@@ -37,7 +37,7 @@ var correctChar = 0;
 var typedEntry = 0;
 var wpm = 0;
 var pause = false;
-var rand = Math.floor(Math.random()*lotrTexts.length);
+var rand; 
 var hpTheme = false;
 
 function selectLeft() {
@@ -59,12 +59,21 @@ function selectLeft() {
 }
 
 function selectRight() {
-    if (rand == lotrTexts.length-1) {
-        rand = 0;
+    if (hpTheme) {
+        if (rand == hpTexts.length-1) {
+            rand = 0;
+        } else {
+            rand++;
+        }
+        oriText.innerHTML = hpTexts[rand];
     } else {
-    rand++;
+        if (rand == lotrTexts.length-1) {
+            rand = 0;
+        } else {
+            rand++;
+        }
+        oriText.innerHTML = lotrTexts[rand];
     }
-    oriText.innerHTML = lotrTexts[rand];
 }
 
 
@@ -206,7 +215,7 @@ function changeTheme() {
         backgroundWrapper.style.backgroundPosition = "center";
         backgroundWrapper.style.backgroundRepeat = "no-repeat";
         intro.style.background = "#266464";
-        introPara.innerHTML = "Welcome to Hogwarts School of Witchcraft and Wizardry's most rigorous typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. \"It is our typing speed Harry, that show what we truly are, far more than our abilities.\". Good Luck!";
+        introPara.innerHTML = "Welcome to Hogwarts School of Witchcraft and Wizardry's most rigorous typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. \"It is our typing speed Harry, that show what we truly are, far more than our abilities.\" Good Luck!";
         hpTheme = true;
         textTitle.style.fontFamily = "'Cantata One', serif";
         meta.style.fontFamily = "'Cantata One', serif";
@@ -236,6 +245,7 @@ resetButton.addEventListener("click", reset, false);
 leftArrow.addEventListener("click", selectLeft, false);
 rightArrow.addEventListener("click", selectRight, false);
 window.addEventListener('load', function (e) {
+    rand = Math.floor(Math.random()*lotrTexts.length);
     oriText.innerHTML = lotrTexts[rand];
   })
 hp.addEventListener("click", changeTheme, false);

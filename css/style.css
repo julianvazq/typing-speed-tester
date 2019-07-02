@@ -66,6 +66,7 @@ body {
     padding: 2em 2em;
     color: #ffffff;
     background: #644726;
+    box-shadow: inset -1px -1px 77px -6px rgba(0,0,0,0.75);
 }
 
 
@@ -155,6 +156,7 @@ i {
 
 .test-wrapper textarea {
     flex: 1;
+    background: #ededede3;
 }
 
 .meta {
