@@ -15,6 +15,7 @@ const hp = document.querySelector(".masthead .hp");
 const lotr = document.querySelector(".masthead .lotr");
 const backgroundWrapper = document.querySelector(".background-wrapper");
 const intro = document.querySelector(".intro");
+const introPara = document.querySelector(".intro p");
 const textTitle = document.querySelector("h2");
 const meta = document.querySelector(".meta");
 
@@ -160,7 +161,7 @@ function checkError() {
     errorDisplay.innerHTML = errors;
 
     if (errors > 0 && errors < 6) {
-        errorDisplay.style.color = "green";
+        errorDisplay.style.color = "rgb(22, 170, 22)";
     } else if (errors > 5 && errors < 16) {
         errorDisplay.style.color = "rgb(202, 202, 0)";
     } else {
@@ -205,6 +206,7 @@ function changeTheme() {
         backgroundWrapper.style.backgroundPosition = "center";
         backgroundWrapper.style.backgroundRepeat = "no-repeat";
         intro.style.background = "#266464";
+        introPara.innerHTML = "Welcome to Hogwarts School of Witchcraft and Wizardry's most rigorous typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. \"It is our typing speed Harry, that show what we truly are, far more than our abilities.\". Good Luck!";
         hpTheme = true;
         textTitle.style.fontFamily = "'Cantata One', serif";
         meta.style.fontFamily = "'Cantata One', serif";
@@ -217,6 +219,7 @@ function changeTheme() {
         backgroundWrapper.style.backgroundPosition = "center";
         backgroundWrapper.style.backgroundRepeat = "no-repeat";
         intro.style.background = "#644726";
+        introPara.innerHTML = "Welcome to Mordor's most feared typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. May the force be with...oh wait, wrong trilogy. Good Luck!";
         hpTheme = false;
         textTitle.style.fontFamily = "'Old Standard TT', serif";
         meta.style.fontFamily = "'Old Standard TT', serif";

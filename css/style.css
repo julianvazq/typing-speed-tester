@@ -71,7 +71,7 @@ body {
 
 .intro p {
     margin: 0 auto;
-    max-width: 550px;
+    max-width: 580px;
 }
 
 .background-wrapper {
@@ -178,13 +178,13 @@ i {
     font-size: 1.2em;
     font-weight: bold;
     color: white;
-    background: rgb(212, 18, 12) ;
+    background: rgba(129, 10, 6, 0.788) ;
     cursor: pointer;
 }
 
 #reset:hover {
     color: white;
-    background-color: green;
+    background-color: rgb(4, 77, 4);
 }
 
 .results {
