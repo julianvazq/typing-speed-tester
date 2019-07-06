@@ -76,8 +76,6 @@ function selectRight() {
     }
 }
 
-
-
 // Add leading zero to numbers 9 or below (purely for aesthetics):
 function leadingZero(time) {
     if (time <= 9) {
@@ -105,18 +103,20 @@ function checkSpelling(e) {
     if (!(key >= 48 && key <= 90) && !(key >= 96 && key <= 111) && !(key >= 186 && key <= 222) && key != 32 && key!= 8) {
         return;
     }
-
+    //#cb1b1be3   red for text area
     let textEntered = testArea.value;
     let oriTextMatch = oriText.innerHTML.substring(0, textEntered.length);
 
     if (textEntered == oriText.innerHTML) {
         clearInterval(interval);
-        testWrapper.style.borderColor = "#2fe73f";
+        testWrapper.style.borderColor = "green";
+        testArea.style.background = "#ededede3";
     } else {
         if (textEntered == oriTextMatch) {
             pause = false;       //Unpause spell checking when error is errased and text matches again
-            testWrapper.style.borderColor = "#7EB2E6";
-           performanceChecks(textEntered);
+            testWrapper.style.borderColor = "green";
+            testArea.style.background = "#ededede3";
+            performanceChecks(textEntered);
         }
         else {
             if (!pause) {        //Pause spell checking after first character mistake
@@ -124,6 +124,7 @@ function checkSpelling(e) {
                 checkError();
             }
             testWrapper.style.borderColor = "#be1111";
+            testArea.style.background = "#cb1b1be3";
         }
     }
 
@@ -200,6 +201,7 @@ function reset() {
     testArea.value = "";
     theTimer.innerHTML = "00:00:00";
     testWrapper.style.borderColor = "grey";
+    testArea.style.background = "#ededede3";
     errorDisplay.innerHTML = "0";
     errorDisplay.style.color = "white";
     accDisplay.innerHTML = "X%";
