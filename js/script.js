@@ -214,7 +214,7 @@ function changeTheme() {
         backgroundWrapper.style.backgroundSize = "cover";
         backgroundWrapper.style.backgroundPosition = "center";
         backgroundWrapper.style.backgroundRepeat = "no-repeat";
-        intro.style.background = "#266464";
+        intro.style.background = "#003e3e";
         introPara.innerHTML = "Welcome to Hogwarts School of Witchcraft and Wizardry's most rigorous typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. \"It is our typing speed Harry, that show what we truly are, far more than our abilities.\" Good Luck!";
         hpTheme = true;
         textTitle.style.fontFamily = "'Cantata One', serif";
@@ -227,7 +227,7 @@ function changeTheme() {
         backgroundWrapper.style.backgroundSize = "cover";
         backgroundWrapper.style.backgroundPosition = "center";
         backgroundWrapper.style.backgroundRepeat = "no-repeat";
-        intro.style.background = "#644726";
+        intro.style.background = "#3e1e00";
         introPara.innerHTML = "Welcome to Mordor's most feared typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. May the force be with...oh wait, wrong trilogy. Good Luck!";
         hpTheme = false;
         textTitle.style.fontFamily = "'Old Standard TT', serif";
