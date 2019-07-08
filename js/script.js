@@ -13,11 +13,6 @@ const leftArrow = document.querySelector(".text-selector .left");
 const rightArrow = document.querySelector(".text-selector .right");
 const hp = document.querySelector(".masthead .hp");
 const lotr = document.querySelector(".masthead .lotr");
-const backgroundWrapper = document.querySelector(".background-wrapper");
-const intro = document.querySelector(".intro");
-const introPara = document.querySelector(".intro p");
-const textTitle = document.querySelector("h2");
-const meta = document.querySelector(".meta");
 
 const lotrTexts = ["Following with his keen eyes the trail to the river, and then the river back towards the forest, Aragorn saw a shadow on the distant green, a dark swift-moving blur. He cast himself upon the ground and listened again intently. But Legolas stood beside him, shading his bright elven-eyes with his long slender hand, and he saw not a shadow, nor a blur, but the small figures of horsemen, many horsemen, and the glint of morning on the tips of their spears was like the twinkle of minute stars beyond the edge of mortal sight. Far behind them a dark smoke rose in thin curling threads.",
                 "This is only a small selection of the assembled presents. Bilbo's residence had got rather cluttered up with things in the course of his long life. It was a tendency of hobbit-holes to get cluttered up: for which the custom of giving so many birthday presents was largely responsible. Not, of course, that the birthday presents were always new; there were one or two old mathoms of forgotten uses that had circulated all around the district; but Bilbo had usually given new presents, and kept those that he received. The old hole was now being cleared a little.",
@@ -211,6 +206,13 @@ function reset() {
 }
 
 function changeTheme() {
+
+    const backgroundWrapper = document.querySelector(".background-wrapper");
+    const intro = document.querySelector(".intro");
+    const introPara = document.querySelector(".intro p");
+    const textTitle = document.querySelector("h2");
+    const meta = document.querySelector(".meta"); //performance section
+
     if (this == hp) {
         backgroundWrapper.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/harry-potter.jpg)";
         backgroundWrapper.style.backgroundSize = "cover";
@@ -249,6 +251,6 @@ rightArrow.addEventListener("click", selectRight, false);
 window.addEventListener('load', function (e) {
     rand = Math.floor(Math.random()*lotrTexts.length);
     oriText.innerHTML = lotrTexts[rand];
-  })
+  });
 hp.addEventListener("click", changeTheme, false);
 lotr.addEventListener("click", changeTheme, false);
