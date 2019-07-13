@@ -34,7 +34,6 @@ var timerRunning = false;
 var errors = 0;
 var correctChar = 0;
 var typedEntry = 0;
-var wpm = 0;
 var pause = false;
 var rand;
 var hpTheme = false;
@@ -85,7 +84,7 @@ function leadingZero(time) {
 
 // Run a standard minute/second/hundredths timer:
 function runTimer() {
-  currentTime =
+  let currentTime =
     leadingZero(timer[0]) +
     ":" +
     leadingZero(timer[1]) +
@@ -142,25 +141,26 @@ function checkSpelling(e) {
 
 function performanceChecks(textEntered) {
   // Gross WPM
+  let grossWpm = 0;
   if (timer[0] < 1) {
-    grossWmp = typedEntry / 5 / (timer[1] / 60);
+    grossWpm = typedEntry / 5 / (timer[1] / 60);
   } else {
-    grossWmp = typedEntry / 5 / timer[0];
+    grossWpm = typedEntry / 5 / timer[0];
   }
 
-  // Net WMP
-  netWmp = grossWmp - errors;
-  wpmDisplay.innerHTML = Math.floor(netWmp);
-  if (netWmp > 60) {
+  // Net WPM
+  let netWpm = grossWpm - errors;
+  wpmDisplay.innerHTML = Math.floor(netWpm);
+  if (netWpm > 60) {
     wpmDisplay.style.color = "green";
-  } else if (netWmp > 40 && netWmp < 60) {
+  } else if (netWpm > 40 && netWpm < 60) {
     wpmDisplay.style.color = "rgb(202, 202, 0)";
   } else {
     wpmDisplay.style.color = "red";
   }
 
   // Accuracy
-  acc = (netWmp / grossWmp) * 100;
+  let acc = (netWpm / grossWpm) * 100;
   accDisplay.innerHTML = acc.toFixed(2) + "%";
   if (acc > 90) {
     accDisplay.style.color = "green";
@@ -266,6 +266,13 @@ rightArrow.addEventListener("click", selectRight, false);
 window.addEventListener("load", function(e) {
   rand = Math.floor(Math.random() * lotrTexts.length);
   oriText.innerHTML = lotrTexts[rand];
+});
+testArea.addEventListener("paste", () => {
+  if (hpTheme) {
+    alert('"Cheaters are not allowed in Hogwarts." - Dumbledore');
+  } else {
+    alert('"Cheaters will be taken to Sauron." - Sauron himself');
+  }
 });
 hp.addEventListener("click", changeTheme, false);
 lotr.addEventListener("click", changeTheme, false);
