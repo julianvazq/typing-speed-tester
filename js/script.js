@@ -222,14 +222,11 @@ function changeTheme() {
   const intro = document.querySelector(".intro");
   const introPara = document.querySelector(".intro p");
   const textTitle = document.querySelector("h2");
-  const meta = document.querySelector(".meta"); //performance section
+  const meta = document.querySelector(".meta"); //results section
 
   if (this == hp) {
     backgroundWrapper.style.backgroundImage =
       "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/harry-potter.jpg)";
-    backgroundWrapper.style.backgroundSize = "cover";
-    backgroundWrapper.style.backgroundPosition = "center";
-    backgroundWrapper.style.backgroundRepeat = "no-repeat";
     intro.style.background = "#003e3e";
     introPara.innerHTML =
       'Welcome to Hogwarts School of Witchcraft and Wizardry\'s most rigorous typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. "It is our typing speed Harry, that show what we truly are, far more than our abilities." Good Luck!';
@@ -242,9 +239,6 @@ function changeTheme() {
   } else {
     backgroundWrapper.style.backgroundImage =
       "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/lord-of-the-rings.jpg)";
-    backgroundWrapper.style.backgroundSize = "cover";
-    backgroundWrapper.style.backgroundPosition = "center";
-    backgroundWrapper.style.backgroundRepeat = "no-repeat";
     intro.style.background = "#3e1e00";
     introPara.innerHTML =
       "Welcome to Mordor's most feared typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. May the force be with...oh wait, wrong trilogy. Good Luck!";
