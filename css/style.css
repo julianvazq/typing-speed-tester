@@ -93,7 +93,6 @@ body {
   background-repeat: no-repeat;
   padding-bottom: 1em;
   height: auto;
-  transition: background 500ms ease-in;
 }
 
 h2 {

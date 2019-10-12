@@ -227,6 +227,7 @@ function changeTheme() {
   if (this == hp) {
     backgroundWrapper.style.backgroundImage =
       "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/harry-potter.jpg)";
+    intro.style.transition = "background 600ms ease-in";
     intro.style.background = "#003e3e";
     introPara.innerHTML =
       'Welcome to Hogwarts School of Witchcraft and Wizardry\'s most rigorous typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. "It is our typing speed Harry, that show what we truly are, far more than our abilities." Good Luck!';
