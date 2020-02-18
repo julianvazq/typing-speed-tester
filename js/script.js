@@ -1,32 +1,32 @@
 //Tpying calculations obtained from: http://indiatyping.com/index.php/typing-tips/typing-speed-calculation-formula
 
 //Typing Speed Test
-const testWrapper = document.querySelector(".test-wrapper");
-const testArea = document.querySelector("#test-area");
-const oriText = document.querySelector("#origin-text p");
-const resetButton = document.querySelector("#reset");
-const theTimer = document.querySelector(".timer");
-const errorDisplay = document.querySelector(".errors span");
-const accDisplay = document.querySelector(".accuracy span");
-const wpmDisplay = document.querySelector(".wpm span");
-const leftArrow = document.querySelector(".text-selector .left");
-const rightArrow = document.querySelector(".text-selector .right");
-const hp = document.querySelector(".masthead .hp");
-const lotr = document.querySelector(".masthead .lotr");
+const testWrapper = document.querySelector('.test-wrapper');
+const testArea = document.querySelector('#test-area');
+const oriText = document.querySelector('#origin-text p');
+const resetButton = document.querySelector('#reset');
+const theTimer = document.querySelector('.timer');
+const errorDisplay = document.querySelector('.errors span');
+const accDisplay = document.querySelector('.accuracy span');
+const wpmDisplay = document.querySelector('.wpm span');
+const leftArrow = document.querySelector('.text-selector .left');
+const rightArrow = document.querySelector('.text-selector .right');
+const hp = document.querySelector('.masthead .hp');
+const lotr = document.querySelector('.masthead .lotr');
 
 const lotrTexts = [
-  "Following with his keen eyes the trail to the river, and then the river back towards the forest, Aragorn saw a shadow on the distant green, a dark swift-moving blur. He cast himself upon the ground and listened again intently. But Legolas stood beside him, shading his bright elven-eyes with his long slender hand, and he saw not a shadow, nor a blur, but the small figures of horsemen, many horsemen, and the glint of morning on the tips of their spears was like the twinkle of minute stars beyond the edge of mortal sight. Far behind them a dark smoke rose in thin curling threads.",
+  'Following with his keen eyes the trail to the river, and then the river back towards the forest, Aragorn saw a shadow on the distant green, a dark swift-moving blur. He cast himself upon the ground and listened again intently. But Legolas stood beside him, shading his bright elven-eyes with his long slender hand, and he saw not a shadow, nor a blur, but the small figures of horsemen, many horsemen, and the glint of morning on the tips of their spears was like the twinkle of minute stars beyond the edge of mortal sight. Far behind them a dark smoke rose in thin curling threads.',
   "This is only a small selection of the assembled presents. Bilbo's residence had got rather cluttered up with things in the course of his long life. It was a tendency of hobbit-holes to get cluttered up: for which the custom of giving so many birthday presents was largely responsible. Not, of course, that the birthday presents were always new; there were one or two old mathoms of forgotten uses that had circulated all around the district; but Bilbo had usually given new presents, and kept those that he received. The old hole was now being cleared a little.",
-  "And all the host laughed and wept, and in the midst of their merriment and tears the clear voice of the minstrel rose like silver and gold, and all men were hushed. And he sang to them, now in the Elven-tongue, now in the speech of the West, until their hearts, wounded with sweet words, overflowed, and their joy was like swords, and they passed in thought out to regions where pain and delight flow together and tears are the very wine of blessedness.",
-  "Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at.",
-  "When every guest had been welcomed and was finally inside the gate, there were songs, dances, music, games, and, of course, food and drink. There were three official meals: lunch, tea, and dinner (or supper). But lunch and tea were marked chiefly by the fact that at those times all the guests were sitting down and eating together. At other times there were merely lots of people eating and drinking - continuously from elevenses until six-thirty, when the fireworks started.",
-  "Out of the wreck rose the Black Rider, tall and threatening, towering above her. With a cry of hatred that stung the very ears like venom he let fall his mace. Her shield was shivered in many pieces, and her arm was broken; she stumbled to her knees. He bent over her like a cloud, and his eyes glittered; he raised his mace to kill. But suddenly he too stumbled forward with a cry of bitter pain, and his stroke went wide, driving into the ground."
+  'And all the host laughed and wept, and in the midst of their merriment and tears the clear voice of the minstrel rose like silver and gold, and all men were hushed. And he sang to them, now in the Elven-tongue, now in the speech of the West, until their hearts, wounded with sweet words, overflowed, and their joy was like swords, and they passed in thought out to regions where pain and delight flow together and tears are the very wine of blessedness.',
+  'Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years, ever since his remarkable disappearance and unexpected return. The riches he had brought back from his travels had now become a local legend, and it was popularly believed, whatever the old folk might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not enough for fame, there was also his prolonged vigour to marvel at.',
+  'When every guest had been welcomed and was finally inside the gate, there were songs, dances, music, games, and, of course, food and drink. There were three official meals: lunch, tea, and dinner (or supper). But lunch and tea were marked chiefly by the fact that at those times all the guests were sitting down and eating together. At other times there were merely lots of people eating and drinking - continuously from elevenses until six-thirty, when the fireworks started.',
+  'Out of the wreck rose the Black Rider, tall and threatening, towering above her. With a cry of hatred that stung the very ears like venom he let fall his mace. Her shield was shivered in many pieces, and her arm was broken; she stumbled to her knees. He bent over her like a cloud, and his eyes glittered; he raised his mace to kill. But suddenly he too stumbled forward with a cry of bitter pain, and his stroke went wide, driving into the ground.'
 ];
 const hpTexts = [
-  "But he understood at last what Dumbledore had been trying to tell him. It was, he thought, the difference between being dragged into the arena to face a battle to the death and walking into the arena with your head held high. Some people, perhaps, would say that there was little to choose between the two ways, but Dumbledore knew - and so do I, thought Harry, with a rush of fierce pride, and so did my parents - that there was all the difference in the world.",
-  "The bang was like a cannon blast, and the golden flames that erupted between them, at the dead center of the circle they had been treading, marked the point where the spells collided. Harry saw Voldemort’s green jet meet his own spell, saw the Elder Wand fly high, dark against the sunrise, spinning across the enchanted ceiling like the head of Nagini, spinning through the air toward the master it would not kill, who had come to take full possession of it at last.",
-  "He, Ron and Hermione were sitting at the very back of the Charms class with a table to themselves. They were supposed to be practicing the opposite of the Summoning Charm today - the Banishing Charm. Owing to the potential for nasty accidents when objects kept flying across the room, Professor Flitwick had given each student a stack of cushions on which to practice, the theory being that these wouldn’t hurt anyone if they went off target. It was a good theory, but it wasn’t working very well.",
-  "She Banished a cushion and it flew across the room and landed in the box they were all supposed to be aiming at. Harry looked at Hermione, thinking... it was true that Snape had saved his life once, but the odd thing was, Snape definitely loathed him, just as he’d loathed Harry’s father when they’d been at school together. Snape loved taking points from Harry, and had certainly never missed an opportunity to give him punishments, or even suggest he should be suspended from school."
+  'But he understood at last what Dumbledore had been trying to tell him. It was, he thought, the difference between being dragged into the arena to face a battle to the death and walking into the arena with your head held high. Some people, perhaps, would say that there was little to choose between the two ways, but Dumbledore knew - and so do I, thought Harry, with a rush of fierce pride, and so did my parents - that there was all the difference in the world.',
+  'The bang was like a cannon blast, and the golden flames that erupted between them, at the dead center of the circle they had been treading, marked the point where the spells collided. Harry saw Voldemort’s green jet meet his own spell, saw the Elder Wand fly high, dark against the sunrise, spinning across the enchanted ceiling like the head of Nagini, spinning through the air toward the master it would not kill, who had come to take full possession of it at last.',
+  'He, Ron and Hermione were sitting at the very back of the Charms class with a table to themselves. They were supposed to be practicing the opposite of the Summoning Charm today - the Banishing Charm. Owing to the potential for nasty accidents when objects kept flying across the room, Professor Flitwick had given each student a stack of cushions on which to practice, the theory being that these wouldn’t hurt anyone if they went off target. It was a good theory, but it wasn’t working very well.',
+  'She Banished a cushion and it flew across the room and landed in the box they were all supposed to be aiming at. Harry looked at Hermione, thinking... it was true that Snape had saved his life once, but the odd thing was, Snape definitely loathed him, just as he’d loathed Harry’s father when they’d been at school together. Snape loved taking points from Harry, and had certainly never missed an opportunity to give him punishments, or even suggest he should be suspended from school.'
 ];
 var timer = [0, 0, 0, 0];
 var interval;
@@ -77,7 +77,7 @@ function selectRight() {
 // Add leading zero to numbers 9 or below (purely for aesthetics):
 function leadingZero(time) {
   if (time <= 9) {
-    time = "0" + time;
+    time = '0' + time;
   }
   return time;
 }
@@ -86,9 +86,9 @@ function leadingZero(time) {
 function runTimer() {
   let currentTime =
     leadingZero(timer[0]) +
-    ":" +
+    ':' +
     leadingZero(timer[1]) +
-    ":" +
+    ':' +
     leadingZero(timer[2]);
   theTimer.innerHTML = currentTime;
   timer[3]++;
@@ -117,13 +117,15 @@ function checkSpelling(e) {
 
   if (textEntered == oriText.innerHTML) {
     clearInterval(interval);
-    testWrapper.style.borderColor = "green";
-    testArea.style.background = "#ededede3";
+    // Green
+    testWrapper.style.borderColor = 'hsl(120, 19%, 52%)';
+    testArea.style.background = '#ededede3';
   } else {
     if (textEntered == oriTextMatch) {
       pause = false; //Unpause spell checking when error is errased and text matches again
-      testWrapper.style.borderColor = "green";
-      testArea.style.background = "#ededede3";
+      // Green
+      testWrapper.style.borderColor = 'hsl(120, 19%, 52%)';
+      testArea.style.background = '#ededede3';
       performanceChecks(textEntered);
     } else {
       if (!pause) {
@@ -131,8 +133,9 @@ function checkSpelling(e) {
         pause = true;
         checkError();
       }
-      testWrapper.style.borderColor = "#be1111";
-      testArea.style.background = "#cb1b1be3";
+      // Red
+      testWrapper.style.borderColor = 'hsl(0, 25%, 51%)';
+      testArea.style.background = 'hsl(0, 38%, 50%)';
     }
   }
 
@@ -152,22 +155,22 @@ function performanceChecks(textEntered) {
   let netWpm = grossWpm - errors;
   wpmDisplay.innerHTML = Math.floor(netWpm);
   if (netWpm > 60) {
-    wpmDisplay.style.color = "green";
+    wpmDisplay.style.color = 'hsl(120, 19%, 52%)';
   } else if (netWpm > 40 && netWpm < 60) {
-    wpmDisplay.style.color = "rgb(202, 202, 0)";
+    wpmDisplay.style.color = 'rgb(202, 202, 0)';
   } else {
-    wpmDisplay.style.color = "red";
+    wpmDisplay.style.color = 'red';
   }
 
   // Accuracy
   let acc = (netWpm / grossWpm) * 100;
-  accDisplay.innerHTML = acc.toFixed(2) + "%";
+  accDisplay.innerHTML = acc.toFixed(2) + '%';
   if (acc > 90) {
-    accDisplay.style.color = "green";
+    accDisplay.style.color = 'hsl(120, 19%, 52%)';
   } else if (acc > 70 && acc < 90) {
-    accDisplay.style.color = "rgb(202, 202, 0)";
+    accDisplay.style.color = 'rgb(202, 202, 0)';
   } else {
-    accDisplay.style.color = "red";
+    accDisplay.style.color = 'hsl(0, 25%, 51%)';
   }
 }
 
@@ -178,11 +181,11 @@ function checkError() {
   errorDisplay.innerHTML = errors;
 
   if (errors > 0 && errors < 6) {
-    errorDisplay.style.color = "rgb(22, 170, 22)";
+    errorDisplay.style.color = 'hsl(120, 19%, 52%)';
   } else if (errors > 5 && errors < 16) {
-    errorDisplay.style.color = "rgb(202, 202, 0)";
+    errorDisplay.style.color = 'rgb(202, 202, 0)';
   } else {
-    errorDisplay.style.color = "red";
+    errorDisplay.style.color = 'hsl(0, 25%, 51%)';
   }
 }
 
@@ -205,69 +208,69 @@ function reset() {
   correctChar = 0;
 
   // Graphic reset
-  testArea.value = "";
-  theTimer.innerHTML = "00:00:00";
-  testWrapper.style.borderColor = "grey";
-  testArea.style.background = "#ededede3";
-  errorDisplay.innerHTML = "0";
-  errorDisplay.style.color = "white";
-  accDisplay.innerHTML = "X%";
-  accDisplay.style.color = "white";
-  wpmDisplay.innerHTML = "0";
-  wpmDisplay.style.color = "white";
+  testArea.value = '';
+  theTimer.innerHTML = '00:00:00';
+  testWrapper.style.borderColor = 'grey';
+  testArea.style.background = '#ededede3';
+  errorDisplay.innerHTML = '0';
+  errorDisplay.style.color = 'white';
+  accDisplay.innerHTML = 'X%';
+  accDisplay.style.color = 'white';
+  wpmDisplay.innerHTML = '0';
+  wpmDisplay.style.color = 'white';
 }
 
 function changeTheme() {
-  const backgroundWrapper = document.querySelector(".background-wrapper");
-  const intro = document.querySelector(".intro");
-  const introPara = document.querySelector(".intro p");
-  const textTitle = document.querySelector("h2");
-  const meta = document.querySelector(".meta"); //results section
+  const backgroundWrapper = document.querySelector('.background-wrapper');
+  const intro = document.querySelector('.intro');
+  const introPara = document.querySelector('.intro p');
+  const textTitle = document.querySelector('h2');
+  const meta = document.querySelector('.meta'); //results section
 
   if (this == hp) {
     backgroundWrapper.style.backgroundImage =
-      "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/harry-potter.jpg)";
-    intro.style.transition = "background 600ms ease-in";
-    intro.style.background = "#003e3e";
+      'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/harry-potter.jpg)';
+    intro.style.transition = 'background 600ms ease-in';
+    intro.style.background = '#003e3e';
     introPara.innerHTML =
       'Welcome to Hogwarts School of Witchcraft and Wizardry\'s most rigorous typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. "It is our typing speed Harry, that show what we truly are, far more than our abilities." Good Luck!';
     hpTheme = true;
     textTitle.style.fontFamily = "'Cantata One', serif";
     meta.style.fontFamily = "'Cantata One', serif";
-    textTitle.innerHTML = "Harry Potter Excerpts";
+    textTitle.innerHTML = 'Harry Potter Excerpts';
     rand = Math.floor(Math.random() * hpTexts.length);
     oriText.innerHTML = hpTexts[rand];
   } else {
     backgroundWrapper.style.backgroundImage =
-      "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/lord-of-the-rings.jpg)";
-    intro.style.background = "#3e1e00";
+      'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/lord-of-the-rings.jpg)';
+    intro.style.background = '#3e1e00';
     introPara.innerHTML =
       "Welcome to Mordor's most feared typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. May the force be with...oh wait, wrong trilogy. Good Luck!";
     hpTheme = false;
     textTitle.style.fontFamily = "'Old Standard TT', serif";
     meta.style.fontFamily = "'Old Standard TT', serif";
-    textTitle.innerHTML = "Lord of the Rings Excerpts";
+    textTitle.innerHTML = 'Lord of the Rings Excerpts';
     rand = Math.floor(Math.random() * lotrTexts.length);
     oriText.innerHTML = lotrTexts[rand];
   }
 }
 
 // Event listeners for keyboard input and the reset button:
-testArea.addEventListener("keypress", start, false);
-testArea.addEventListener("keyup", checkSpelling, false);
-resetButton.addEventListener("click", reset, false);
-leftArrow.addEventListener("click", selectLeft, false);
-rightArrow.addEventListener("click", selectRight, false);
-window.addEventListener("load", function(e) {
+testArea.addEventListener('keypress', start, false);
+testArea.addEventListener('keyup', checkSpelling, false);
+resetButton.addEventListener('click', reset, false);
+leftArrow.addEventListener('click', selectLeft, false);
+rightArrow.addEventListener('click', selectRight, false);
+window.addEventListener('load', function(e) {
   rand = Math.floor(Math.random() * lotrTexts.length);
   oriText.innerHTML = lotrTexts[rand];
 });
-testArea.addEventListener("paste", () => {
+testArea.addEventListener('paste', () => {
   if (hpTheme) {
     alert('"Cheaters are not allowed in Hogwarts." - Dumbledore');
   } else {
     alert('"Cheaters will be taken to Sauron." - Sauron himself');
   }
 });
-hp.addEventListener("click", changeTheme, false);
-lotr.addEventListener("click", changeTheme, false);
+hp.addEventListener('click', changeTheme, false);
+lotr.addEventListener('click', changeTheme, false);
