@@ -223,32 +223,41 @@ function reset() {
 function changeTheme() {
   const backgroundWrapper = document.querySelector('.background-wrapper');
   const intro = document.querySelector('.intro');
-  const introPara = document.querySelector('.intro p');
   const textTitle = document.querySelector('h2');
   const meta = document.querySelector('.meta'); //results section
 
   if (this == hp) {
     backgroundWrapper.style.backgroundImage =
-      'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/harry-potter.jpg)';
+      'linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.65)), url(https://julianvazq.github.io/typing-speed-tester/images/harry-potter.jpg)';
     intro.style.transition = 'background 600ms ease-in';
     intro.style.background = '#003e3e';
-    introPara.innerHTML =
-      'Welcome to Hogwarts School of Witchcraft and Wizardry\'s most rigorous typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. "It is our typing speed Harry, that show what we truly are, far more than our abilities." Good Luck!';
+    intro.innerHTML = `<p>
+    Welcome to Hogwarts School of Witchcraft and Wizardry's most rigorous typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. Good luck!
+    <blockquote>It is our typing speed Harry, that show what we truly are, far more than our abilities.</blockquote>
+    <cite>Dumbledore</cite>
+  </p>`;
     hpTheme = true;
     textTitle.style.fontFamily = "'Cantata One', serif";
     meta.style.fontFamily = "'Cantata One', serif";
+    meta.style.background = 'rgba(0, 0, 0, 0.5)';
     textTitle.innerHTML = 'Harry Potter Excerpts';
     rand = Math.floor(Math.random() * hpTexts.length);
     oriText.innerHTML = hpTexts[rand];
   } else {
     backgroundWrapper.style.backgroundImage =
-      'linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://julianvazq.github.io/typing-speed-tester/images/lord-of-the-rings.jpg)';
+      'linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.65)), url(https://julianvazq.github.io/typing-speed-tester/images/lord-of-the-rings.jpg)';
     intro.style.background = '#3e1e00';
-    introPara.innerHTML =
-      "Welcome to Mordor's most feared typing test. Your goal is to duplicate the text below, EXACTLY as provided. The timer starts when you start typing, and only stops when you match the text exactly. May the force be with...oh wait, wrong trilogy. Good Luck!";
+    intro.innerHTML = `<p>Welcome to Mordor's most feared typing test. Your goal is to duplicate
+      the text below, EXACTLY as provided. The timer starts when you start
+      typing, and only stops when you match the text exactly. May the force
+      be with...oh wait, wrong trilogy. Good luck!
+      <blockquote>One does not simply ace this typing test.</blockquote>
+      <cite>Boromir</cite>
+    </p>`;
     hpTheme = false;
     textTitle.style.fontFamily = "'Old Standard TT', serif";
     meta.style.fontFamily = "'Old Standard TT', serif";
+    meta.style.background = 'rgba(95, 95, 95, 0.45)';
     textTitle.innerHTML = 'Lord of the Rings Excerpts';
     rand = Math.floor(Math.random() * lotrTexts.length);
     oriText.innerHTML = lotrTexts[rand];
