@@ -248,6 +248,7 @@ i {
   flex: 1;
   background: #ededede3;
   padding: 10px;
+  border-radius: 4px;
 }
 
 .meta {
